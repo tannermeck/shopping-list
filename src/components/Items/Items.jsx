@@ -35,7 +35,7 @@ function Items({ list, deleteItem, editItem }){
                             value={food.name}
                             onChange={(e) => {editItem({ ...food, name: e.target.value })}}
                         />
-                        <button onClick={() => handleSave()}>Save</button>
+                        <button className={style.saveButton} onClick={() => handleSave()}>Save</button>
                         <button className={style.deleteButton} onClick={() => handleDelete(food.id)}>Delete</button>
                     </div>}
             </ul>

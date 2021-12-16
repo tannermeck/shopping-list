@@ -11,7 +11,7 @@
     flex-direction: column;
 }
 .header {
-    color: yellowgreen;
+    color: #4CA0A9;
 }
 .inputBox {
     height: 3rem;
@@ -24,6 +24,8 @@
     font-size: 1.2rem;
     border-radius: 5px;
     font-family:fantasy, sans-serif;
+    background-color: #47FF5D;
+    font-weight: bold;
 }
 .submitButton:hover {
     cursor: pointer;
