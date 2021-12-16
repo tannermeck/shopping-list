@@ -17,11 +17,13 @@ let initialItems = [
       done: false
     }
 ]
-
+let allItems = [...initialItems]
 function itemsReducer(items, action){
     switch(action.type){
         case 'add' : {
-            return [...items, {id: action.id, name: action.name, done: false}]
+            const newObj = {id: action.id, name: action.name, done: false}
+            allItems.push(newObj)
+            return [...items, newObj]
         }
         case 'edit' : {
            return items.map(item => {
@@ -47,7 +49,7 @@ function ShoppingList(){
     const addNewItem = (name) => {
         dispatch({
             type: 'add',
-            id: items.length,
+            id: allItems.length,
             name
         })
     }

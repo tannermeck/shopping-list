@@ -14,7 +14,6 @@ function Items({ list, deleteItem, editItem }){
         setEdit(false)
         setEditId('')
     }
-
     const handleDelete = (id) => {
         deleteItem(id)
     }
