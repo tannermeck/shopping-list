@@ -14,3 +14,12 @@
     padding: 10px;
     font-size: 1.4rem;
 }
+.editList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.deleteButton {
+    padding: 2px;
+    height: 30px;
+}

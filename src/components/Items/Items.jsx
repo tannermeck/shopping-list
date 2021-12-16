@@ -6,7 +6,10 @@ function Items({ list }){
             <h1 className={style.groceryHeader}>Grocery Items:</h1>
             <ul>
             {list.map(food => (
-                <li key={food.id} className={style.listItem}>{food.name}</li>
+                <div key={food.id} className={style.editList}>
+                    <li className={style.listItem}>{food.name}</li>
+                    <button className={style.deleteButton}>Delete</button>
+                </div>
             ))}
             </ul>
         </div>

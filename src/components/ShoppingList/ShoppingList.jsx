@@ -1,4 +1,5 @@
-import { useReducer, useState } from 'react';
+import { useReducer } from 'react';
+import AddItem from '../AddItem/AddItem';
 import Items from '../Items/Items';
 import style from './shoppingList.css'
 
@@ -29,7 +30,7 @@ function itemsReducer(items, action){
 }
 
 function ShoppingList(){
-    const [name, setName] = useState('')
+    
     const [items, dispatch] = useReducer(itemsReducer, initialItems)
 
     const addNewItem = (name) => {
@@ -39,26 +40,11 @@ function ShoppingList(){
             name
         })
     }
-    const handleNewItem = (e) => {
-        e.preventDefault();
-        addNewItem(name)
-        setName('')
-    }
 
     return (
         <section className={style.shoppingContainer}>
             <div className={style.inputField}>
-                <h1 className={style.header}>Add to Your Shopping List:</h1>
-                <form className={style.form} onSubmit={handleNewItem}>
-                    <input className={style.inputBox} 
-                    type='text' 
-                    placeholder='Add Item...'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    />
-
-                    <button className={style.submitButton}>Add New Item</button>
-                </form>
+                <AddItem addNewItem={addNewItem} />
             </div>
             <div>
                 <Items list={items}/>
