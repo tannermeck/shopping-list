@@ -23,6 +23,9 @@ function itemsReducer(items, action){
         case 'add' : {
             return [...items, {id: action.id, name: action.name, done: false}]
         }
+        case 'delete' : {
+            return items.filter(item => item.id !== action.id)
+        }
         default: {
             throw Error('Action Not Found')
         }
@@ -41,13 +44,20 @@ function ShoppingList(){
         })
     }
 
+    const deleteItem = (id) => {
+        dispatch({
+            type: 'delete',
+            id
+        })
+    }
+
     return (
         <section className={style.shoppingContainer}>
             <div className={style.inputField}>
                 <AddItem addNewItem={addNewItem} />
             </div>
             <div>
-                <Items list={items}/>
+                <Items list={items} deleteItem={deleteItem} />
             </div>
         </section>
     )

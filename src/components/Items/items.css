@@ -22,4 +22,9 @@
 .deleteButton {
     padding: 2px;
     height: 30px;
+    background-color: red;
+    font-weight: bold;
+}
+.deleteButton:hover {
+    cursor: pointer;
 }
