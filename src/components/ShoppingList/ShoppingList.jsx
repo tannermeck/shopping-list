@@ -23,6 +23,14 @@ function itemsReducer(items, action){
         case 'add' : {
             return [...items, {id: action.id, name: action.name, done: false}]
         }
+        case 'edit' : {
+           return items.map(item => {
+               if (item.id === action.name.id){
+                   return action.name
+               }
+               return item
+           })
+        }
         case 'delete' : {
             return items.filter(item => item.id !== action.id)
         }
@@ -43,7 +51,12 @@ function ShoppingList(){
             name
         })
     }
-
+    const editItem = (name) => {
+        dispatch({
+            type: 'edit',
+            name
+        })
+    }
     const deleteItem = (id) => {
         dispatch({
             type: 'delete',
@@ -57,7 +70,7 @@ function ShoppingList(){
                 <AddItem addNewItem={addNewItem} />
             </div>
             <div>
-                <Items list={items} deleteItem={deleteItem} />
+                <Items list={items} deleteItem={deleteItem} editItem={editItem}/>
             </div>
         </section>
     )

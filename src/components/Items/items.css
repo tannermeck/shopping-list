@@ -28,3 +28,6 @@
 .deleteButton:hover {
     cursor: pointer;
 }
+.editInput {
+    color: black;
+}
