@@ -29,6 +29,12 @@
     font-weight: bold;
     margin-bottom: 8px;
 }
+.hoverCss:hover {
+    color: red !important;
+}
+.pTag:hover {
+    color: white;
+}
 .editButton {
     padding: 2px;
     height: 30px;

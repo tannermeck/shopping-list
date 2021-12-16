@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import style from './items.css';
 
@@ -25,8 +26,8 @@ function Items({ list, deleteItem, editItem }){
                 {(editId !== food.id) &&
                     <div key={food.id} className={style.editList}>
                         <li className={style.listItem}>{food.name}</li>
-                        <button className={style.editButton} onClick={() => handleEdit(food.id)}>Edit</button>
-                        <button className={style.deleteButton} onClick={() => handleDelete(food.id)}>Delete</button>
+                        <button aria-label='edit-button' className={style.editButton} onClick={() => handleEdit(food.id)}>Edit</button>
+                        <button aria-label='delete-button' className={style.deleteButton} onClick={() => handleDelete(food.id)}>Delete</button>
                     </div>}
                 {(editId === food.id) && edit &&
                     <div>
@@ -35,7 +36,7 @@ function Items({ list, deleteItem, editItem }){
                             value={food.name}
                             onChange={(e) => {editItem({ ...food, name: e.target.value })}}
                         />
-                        <button className={style.saveButton} onClick={() => handleSave()}>Save</button>
+                        <button aria-label='save-button' className={style.saveButton} onClick={() => handleSave()}>Save</button>
                         <button className={style.deleteButton} onClick={() => handleDelete(food.id)}>Delete</button>
                     </div>}
             </ul>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import style from '../ShoppingList/shoppingList.css';
 
@@ -20,7 +21,7 @@ function AddItem({ addNewItem }){
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     />
-                    <button className={style.submitButton}>Add New Item</button>
+                    <button aria-label='add-button' className={style.submitButton}>Add New Item</button>
                 </form>
             </div>
     )

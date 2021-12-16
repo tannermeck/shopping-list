@@ -1,3 +1,4 @@
+import React from 'react';
 import { useReducer } from 'react';
 import AddItem from '../AddItem/AddItem';
 import Items from '../Items/Items';
