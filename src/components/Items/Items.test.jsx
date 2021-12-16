@@ -28,4 +28,5 @@ it('should delete an item that exists on the page', async () => {
         userEvent.click(btn)
     })
     expect(pickles).not.toBeInTheDocument();
+
 })
