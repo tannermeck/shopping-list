@@ -26,12 +26,12 @@ function Items({ list, deleteItem, editItem }){
                 {(editId !== food.id) &&
                     <div key={food.id} className={style.editList}>
                         <li className={style.listItem}>{food.name}</li>
-                        <button aria-label='edit-button' className={style.editButton} onClick={() => handleEdit(food.id)}>Edit</button>
+                        <button aria-label={`${food.name}-aria`} className={style.editButton} onClick={() => handleEdit(food.id)}>Edit</button>
                         <button aria-label='delete-button' className={style.deleteButton} onClick={() => handleDelete(food.id)}>Delete</button>
                     </div>}
                 {(editId === food.id) && edit &&
                     <div>
-                        <input className={style.editInput} 
+                        <input aria-label='input-box' className={style.editInput} 
                             type='text'
                             value={food.name}
                             onChange={(e) => {editItem({ ...food, name: e.target.value })}}

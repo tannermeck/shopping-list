@@ -3,22 +3,34 @@ import { screen, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ShoppingList from '../ShoppingList/ShoppingList';
 
-it('should edit an item that exists on the page', async () => {
+it('should render a list of items', () => {
     render(<ShoppingList />)
+    const pickles = screen.getByText('Pickles');
+    const mac = screen.getByText('Mac & Cheese');
+    const toquitos = screen.getByText('Toquitos');
 
-    waitFor(async() => {
-    const button = await screen.findByRole('button', {name: 'edit-button'});
-    const input = await screen.findByRole('textbox')
-    
-    userEvent.click(button);
-    userEvent.type(input, 'pickled olives');
-    const saveButton = await screen.findByRole('button', {name: 'save-button'})
-    screen.debug()
-    userEvent.click(saveButton);
-    })
-    const text = await screen.findByText('pickled olives');
-    expect(text).toBeInTheDocument()
+    expect(pickles).toBeInTheDocument();
+    expect(mac).toBeInTheDocument();
+    expect(toquitos).toBeInTheDocument();
 })
+
+// it('should edit an item that exists on the page', async () => {
+//     render(<ShoppingList />)
+
+//     waitFor(async() => {
+//     const button = await screen.findByRole('button', {name: 'Pickles-aria'});
+//     const input = await screen.findByRole({name: 'input-box'})
+    
+//     userEvent.click(button);
+//     userEvent.type(input, 'pickled olives');
+//     const saveButton = await screen.findByRole('button', {name: 'save-button'})
+//     userEvent.click(saveButton);
+//     screen.debug()
+//     })
+    
+//     const text = await screen.findByText('pickled olives');
+//     expect(text).toBeInTheDocument()
+// })
 
 it('should delete an item that exists on the page', async () => {
     render(<ShoppingList />)
