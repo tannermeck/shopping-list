@@ -14,23 +14,26 @@ it('should render a list of items', () => {
     expect(toquitos).toBeInTheDocument();
 })
 
-// it('should edit an item that exists on the page', async () => {
-//     render(<ShoppingList />)
+it('should edit an item that exists on the page', async () => {
+    render(<ShoppingList />)
 
-//     waitFor(async() => {
-//     const button = await screen.findByRole('button', {name: 'Pickles-aria'});
-//     const input = await screen.findByRole({name: 'input-box'})
+    waitFor(async() => {
+    const button = await screen.findByRole('button', {name: 'Pickles-aria'});
+    userEvent.click(button);
+    const input = await screen.findByRole({name: 'input-box'})
+    const saveButton = await screen.findByRole('button', {name: 'save-button'})
     
-//     userEvent.click(button);
-//     userEvent.type(input, 'pickled olives');
-//     const saveButton = await screen.findByRole('button', {name: 'save-button'})
-//     userEvent.click(saveButton);
-//     screen.debug()
-//     })
+    expect(input).toBeInTheDocument();
+    expect(saveButton).toBeInTheDocument();
+
+    userEvent.type(input, 'pickled olives');
+    userEvent.click(saveButton);
+
+    const text = await screen.findByText('pickled olives');
+    expect(text).toBeInTheDocument()
+    })
     
-//     const text = await screen.findByText('pickled olives');
-//     expect(text).toBeInTheDocument()
-// })
+})
 
 it('should delete an item that exists on the page', async () => {
     render(<ShoppingList />)
