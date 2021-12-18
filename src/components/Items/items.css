@@ -1,0 +1,68 @@
+.itemContainer {
+    display: flex;
+    align-items: left;
+    margin: auto;
+    width: fit-content;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #4CA0A9;
+}
+.groceryHeader {
+    margin-bottom: 0px;
+    text-align: center;
+}
+.listItem {
+    color: white;
+    list-style: none;
+    padding: 10px;
+    font-size: 1.4rem;
+}
+.editList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.deleteButton {
+    padding: 2px;
+    height: 30px;
+    background-color: red;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.hoverCss:hover {
+    color: red !important;
+}
+.pTag:hover {
+    color: white;
+}
+.editButton {
+    padding: 2px;
+    height: 30px;
+    background-color: #3370ff;
+    font-weight: bold;
+    margin-right: 3px;
+    margin-bottom: 8px;
+}
+.saveButton {
+    padding: 2px;
+    height: 30px;
+    background-color: #47FF5D;
+    font-weight: bold;
+    margin-right: 3px;
+    margin-left: 10px;
+}
+.deleteButton:hover {
+    cursor: pointer;
+    color: white;
+}
+.editButton:hover {
+    cursor: pointer;
+    color: white;
+}
+.saveButton:hover {
+    cursor: pointer;
+    color: white;
+}
+.editInput {
+    color: black;
+}
